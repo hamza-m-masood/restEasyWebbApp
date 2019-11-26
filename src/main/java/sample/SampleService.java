@@ -64,6 +64,7 @@ public class SampleService {
 		return employees.get(employeeId);		
     }
 	
+	//employees with json
 	@GET
     @Path("/json/employees/")
     @Produces("application/json")
