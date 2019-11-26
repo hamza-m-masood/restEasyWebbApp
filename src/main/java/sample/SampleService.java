@@ -100,10 +100,19 @@ public class SampleService {
 	}
 	
 	@POST
-	@Path("employees/change")
+	@Path("employees/changexml")
 	@Consumes("application/xml")
 	@Produces("application/xml")
-	public Employee addEmployee(Employee employee) {
+	public Employee addEmployeeXML(Employee employee) {
+		employees.put(employee.getEmployeeId(), employee);
+		return employee;
+	}
+	
+	@POST
+	@Path("employees/changejson")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Employee addEmployeeJson(Employee employee) {
 		employees.put(employee.getEmployeeId(), employee);
 		return employee;
 	}
